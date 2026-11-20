@@ -1,13 +1,13 @@
 ---
 name: agquota-swarm
-description: "Live-quota-aware multi-model swarm orchestrator skill for Antigravity IDE. Dynamically checks remaining model quotas and dispatches parallel swarm workers across Argon, Neon, Hydrogen, Claude Opus 5.5, Claude Sonnet 5.5, and GPT-OSS 120B at Low/Medium/High/XHigh effort levels."
+description: "Live-quota-aware multi-model swarm orchestrator skill for Antigravity. Dynamically checks remaining model quotas and dispatches parallel swarm workers across Argon, Neon, Hydrogen, Claude Opus 5.5, Claude Sonnet 5.5, and GPT-OSS 120B at Low/Medium/High/XHigh effort levels."
 ---
 
 # /agquota-swarm — Quota-Aware Multi-Model Swarm Orchestrator
 
 ## 1. Mission & Core Responsibility
 
-`/agquota-swarm` dynamically inspects live remaining `%` quotas in Antigravity IDE and dispatches parallel swarm workers across `Gemini 4 Argon`, `Gemini 4 Neon`, `Gemini 4 Hydrogen`, `Claude Opus 5.5`, `Claude Sonnet 5.5`, and `GPT-OSS 120B` at `Low / Medium / High / XHigh` effort levels.
+`/agquota-swarm` dynamically inspects live remaining `%` quotas in Antigravity and dispatches parallel swarm workers across `Gemini 4 Argon`, `Gemini 4 Neon`, `Gemini 4 Hydrogen`, `Claude Opus 5.5`, `Claude Sonnet 5.5`, and `GPT-OSS 120B` at `Low / Medium / High / XHigh` effort levels.
 
 ---
 

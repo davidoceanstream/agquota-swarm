@@ -2,7 +2,7 @@
 
 # AGQuota-Swarm (`/agquota-swarm`)
 
-**A live-quota-aware multi-model Swarm Orchestrator skill for Antigravity IDE.**
+**A live-quota-aware multi-model Swarm Orchestrator skill for Antigravity (works across both the Antigravity Workspace App and Antigravity IDE).**
 
 AGQuota-Swarm inspects your live remaining `%` quotas across Antigravity's model pool (`Gemini 4 Argon`, `Gemini 4 Neon`, `Gemini 4 Hydrogen`, `Claude Opus 5.5`, `Claude Sonnet 5.5`, `GPT-OSS 120B`, and more) and dispatches parallel swarm workers with disjoint file ownership, preview-first roster confirmation, and clean post-task teardown.
 

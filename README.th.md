@@ -2,7 +2,7 @@
 
 # AGQuota-Swarm (`/agquota-swarm`)
 
-**สกิลจัดทัพ Multi-Model Swarm แบบเช็กโควต้า `%` สดอัตโนมัติ สำหรับ Antigravity IDE**
+**สกิลจัดทัพ Multi-Model Swarm แบบเช็กโควต้า `%` สดอัตโนมัติ สำหรับ Antigravity (ใช้ได้ทั้งในหน้า Antigravity App และ Antigravity IDE)**
 
 AGQuota-Swarm จะช่วยตรวจสอบโควต้า `%` ที่เหลืออยู่จริงของแต่ละโมเดลใน Antigravity (`Gemini 4 Argon`, `Gemini 4 Neon`, `Gemini 4 Hydrogen`, `Claude Opus 5.5`, `Claude Sonnet 5.5`, `GPT-OSS 120B` และอื่นๆ) แล้วกระจายงานให้ worker ทำงานขนานกันอย่างปลอดภัย ไม่แก้ไขไฟล์ชนกัน พร้อมโหมดดูรายชื่อทีมก่อนสั่งรันจริง
 
