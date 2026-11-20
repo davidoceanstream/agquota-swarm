@@ -1,4 +1,4 @@
-"""Repository & Zero-Leak Privacy Shield validator for VirtuosoSwarm."""
+"""Repository & Zero-Leak Privacy Shield validator for AGQuota-Swarm."""
 
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ FORBIDDEN_PATTERNS = [
     (r"D:\\AI-Tools", "Hardcoded local D:\\AI-Tools path"),
     (r"/Users/[A-Za-z0-9_.-]+", "Hardcoded macOS user path"),
     (r"/home/[A-Za-z0-9_.-]+", "Hardcoded Linux user path"),
+    (r"\bvirtuoso\b", "Legacy personal brand reference"),
     (r"\bsk-[A-Za-z0-9]{20,}", "Potential OpenAI/Anthropic API key"),
     (r"\bAIza[0-9A-Za-z_-]{35}", "Potential Google API key"),
     (r"\bghp_[A-Za-z0-9]{36}", "Potential GitHub PAT"),
@@ -28,8 +29,8 @@ def validate_skill_frontmatter(skill_path: Path) -> list[str]:
         return [f"{skill_path.name}: Missing YAML frontmatter block"]
 
     frontmatter = match.group(1)
-    if not re.search(r"^name:\s*virtuososwarm\s*$", frontmatter, re.MULTILINE):
-        errors.append(f"{skill_path.name}: Frontmatter missing 'name: virtuososwarm'")
+    if not re.search(r"^name:\s*agquota-swarm\s*$", frontmatter, re.MULTILINE):
+        errors.append(f"{skill_path.name}: Frontmatter missing 'name: agquota-swarm'")
     if not re.search(r"^description:\s*.+$", frontmatter, re.MULTILINE):
         errors.append(f"{skill_path.name}: Frontmatter missing 'description'")
     return errors
@@ -55,7 +56,7 @@ def scan_for_leaks(repo_root: Path) -> list[str]:
 
         rel = path.relative_to(repo_root)
         for pattern, label in FORBIDDEN_PATTERNS:
-            for m in re.finditer(pattern, content):
+            for m in re.finditer(pattern, content, re.IGNORECASE):
                 errors.append(f"{rel}: {label} matched '{m.group(0)}'")
     return errors
 

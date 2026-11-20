@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SOURCE_SKILL="$REPO_ROOT/SKILL.md"
-TARGET_DIR="${HOME}/.gemini/config/skills/virtuososwarm"
+TARGET_DIR="${HOME}/.gemini/config/skills/agquota-swarm"
 USE_SYMLINK=false
 
 while [[ $# -gt 0 ]]; do

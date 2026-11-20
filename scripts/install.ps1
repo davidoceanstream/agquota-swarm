@@ -1,6 +1,6 @@
 [CmdletBinding(SupportsShouldProcess = $true)]
 param(
-    [string]$TargetDir = (Join-Path $env:USERPROFILE ".gemini\config\skills\virtuososwarm"),
+    [string]$TargetDir = (Join-Path $env:USERPROFILE ".gemini\config\skills\agquota-swarm"),
     [switch]$Symlink
 )
 
@@ -14,7 +14,7 @@ if (-not (Test-Path $SourceSkill)) {
     throw "Source SKILL.md not found at $SourceSkill"
 }
 
-if ($PSCmdlet.ShouldProcess($TargetSkill, "Install VirtuosoSwarm SKILL.md")) {
+if ($PSCmdlet.ShouldProcess($TargetSkill, "Install AGQuota-Swarm SKILL.md")) {
     if (-not (Test-Path $TargetDir)) {
         New-Item -ItemType Directory -Path $TargetDir -Force | Out-Null
     }
