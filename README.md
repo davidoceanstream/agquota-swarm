@@ -12,8 +12,9 @@ AGQuota-Swarm inspects your live remaining `%` quotas across Antigravity's model
 
 - **Live Quota Balancing:** Always queries `swarm(action="models", all=True)` before spawning workers, so you never blindly drain your primary session model when other strong models have plenty of headroom.
 - **Two User-Controlled Modes:**
-  - **Default Mode (`/agquota-swarm <task>`):** Checks quotas, assigns disjoint scopes, launches the Swarm UI board, and delivers the synthesized result.
-  - **Preview Mode (`/agquota-swarm preview first <task>`):** Shows a concise table of planned workers, models, effort levels, and remaining `%` quotas and waits for your approval before spawning.
+  - **Council & Blueprint Mode (`/agquota-swarm plan first <task>` or 3+ workers):** Runs an in-context planning council (Architecture, First-Principles, and Domain/UX lenses) and presents a **Swarm Blueprint Table** showing each worker's role, Primary Skill, Execution Modifiers, MCPs, model, effort level, file scope, and remaining `%` quota for approval before spawning.
+  - **Fast-Track Launch Mode (`/agquota-swarm <task>` for 1–2 workers or *"launch now"*):** Checks quotas, assigns skills/MCPs in each worker's brief, launches the Swarm UI board immediately, and delivers the synthesized result.
+- **Per-Worker Skill & MCP Routing (1 Primary + Max 2 Modifiers):** Assigns each worker 1 Primary Role Skill plus up to 2 Execution Modifiers and explicit MCP servers via a structured 5-line `brief` contract, while keeping interactive commands like `/learn` strictly at the coordinator level.
 - **Safe Parallel Edits:** Enforces disjoint file/folder scopes (`inherit` for non-overlapping tasks, `share` or `branch` when parallel workers touch overlapping codebases).
 - **Portable & Zero-Leak:** Works regardless of where you clone the repository (any drive on Windows, macOS, or Linux). Contains zero personal paths, tokens, or telemetry.
 
